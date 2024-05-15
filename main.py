@@ -33,8 +33,8 @@ st.title("BlockBodies.ai - Chat del Bot")
 # CSS personalizado para estilo de chat
 st.markdown("""
     <style>
-    .user-message { color: blue; }
-    .bot-message { color: green; }
+    .user-message { color: white; }
+    .bot-message { color: ffffff; }
     </style>
     """, unsafe_allow_html=True)
 
@@ -65,9 +65,9 @@ st.text_input("Escribe tu mensaje aquí...", key="user_input", on_change=handle_
 # Mostrar la conversación
 for message in st.session_state.messages:
     if message["role"] == "user":
-        st.markdown(f"<div class='user-message'>**Tú:** {message['content']}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='user-message'>Antonio: {message['content']}</div>", unsafe_allow_html=True)
     else:
-        st.markdown(f"<div class='bot-message'>**Bot:** {message['content']}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='bot-message'>Bot:{message['content']}</div>", unsafe_allow_html=True)
 
 # Log para verificar que la aplicación ha arrancado
 logger.debug("Aplicación Streamlit arrancada.")
